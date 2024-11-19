@@ -46,6 +46,7 @@ b =np.array([
     ])
 
 piezo_const = np.linalg.inv(np.transpose(A)@A)@np.transpose(A)@b
+piezo_const = np.sqrt(piezo_const)
 piezo_const = np.around(piezo_const, 2)
 
 print("\ncalibration coefficients (to multipy old piezo constants):")
